@@ -1,69 +1,53 @@
-*.rbc
-capybara-*.html
-.rspec
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/db/*.sqlite3-[0-9]*
-/public/system
-/coverage/
-/spec/tmp
-*.orig
-rerun.txt
-pickle-email-*.html
+# Sistema de archivos
+.DS_Store
+*.log
+*.pid
+*.sqlite3
+*.sqlite3-journal
 
-# Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+# Dependencias de Bundler
+/vendor/bundle/
 
-# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
-config/master.key
+# Archivos de configuración local
+/config/master.key
+/config/credentials.yml.enc
 
-# Only include if you have production secrets in this file, which is no longer a Rails default
-# config/secrets.yml
-
-# dotenv, dotenv-rails
-# TODO Comment out these rules if environment variables can be committed
-.env
-.env*.local
-
-## Environment normalization:
-/.bundle
-/vendor/bundle
-
-# these should all be checked in to normalize the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
-
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
-
-# if using bower-rails ignore default bower_components path bower.json files
-/vendor/assets/bower_components
-*.bowerrc
-bower.json
-
-# Ignore pow environment settings
-.powenv
-
-# Ignore Byebug command history file.
-.byebug_history
-
-# Ignore node_modules
-node_modules/
-
-# Ignore precompiled javascript packs
+# Archivos temporales de Rails
+/tmp
+/cache
+/log
+/storage
 /public/packs
 /public/packs-test
 /public/assets
 
-# Ignore yarn files
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+# Carpetas de test
+/test/tmp
+/test/cache
 
-# Ignore uploaded files in development
-/storage/*
-!/storage/.keep
-/public/uploads
+# Carpeta de caché de bootsnap
+/tmp/cache/bootsnap-*
+
+# Entornos de desarrollo específicos
+/.env
+/.env.local
+
+# Configuración de la base de datos
+/database.yml
+
+# IDEs y editores
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de logs de Rails
+/log/*.log
+/log/*.pid
+
+# Otros archivos de caché y configuraciones locales
+*.swp
+*.swo
+
+# Ignorar gemas instaladas localmente
+.gem
