@@ -1,0 +1,11 @@
+<h1>Cotizaciones</h1>
+
+<% if @quotes %>
+  <ul>
+    <% @quotes.each do |quote| %>
+      <li><%= quote['Subject'] %> - <%= quote['Grand_Total'] %></li>
+    <% end %>
+  </ul>
+<% elsif @error %>
+  <p><%= @error %></p>
+<% end %>
