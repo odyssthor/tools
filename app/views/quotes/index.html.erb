@@ -1,11 +1,44 @@
-<h1>Cotizaciones</h1>
+<!-- app/views/quotes/index.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cotizaciones</title>
+  <%= stylesheet_link_tag 'quotes', media: 'all' %>
+</head>
+<body>
+<div class="container">
+  <h1>Cotizaciones</h1>
 
-<% if @quotes %>
-  <ul>
-    <% @quotes.each do |quote| %>
-      <li><%= quote['Subject'] %> - <%= quote['Grand_Total'] %></li>
+  <% if @error %>
+    <div class="alert alert-danger">
+      <%= @error %>
+    </div>
+  <% else %>
+    <% if @quotes %>
+      <table>
+        <thead>
+        <tr>
+          <th>Asunto</th>
+          <th>Total</th>
+          <th>Fecha de Creación</th>
+          <th>Válido Hasta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @quotes.each do |quote| %>
+          <tr>
+            <td><%= quote['Subject'] %></td>
+            <td><%= number_to_currency(quote['Grand_Total']) %></td>
+            <td><%= format_date(quote['Created_Time']) %></td>
+            <td><%= format_date(quote['Valid_Till']) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No hay cotizaciones disponibles.</p>
     <% end %>
-  </ul>
-<% elsif @error %>
-  <p><%= @error %></p>
-<% end %>
+  <% end %>
+</div>
+</body>
+</html>
