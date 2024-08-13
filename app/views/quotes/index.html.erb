@@ -22,6 +22,7 @@
           <th>Total</th>
           <th>Fecha de Creación</th>
           <th>Válido Hasta</th>
+          <th>Direccion</th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
             <td><%= number_to_currency(quote['Grand_Total']) %></td>
             <td><%= format_date(quote['Created_Time']) %></td>
             <td><%= format_date(quote['Valid_Till']) %></td>
+            <td><%= quote['Billing_Street'] %></td>
           </tr>
         <% end %>
         </tbody>
